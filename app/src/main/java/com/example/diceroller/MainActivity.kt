@@ -9,6 +9,10 @@ import android.widget.Toast
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
+
+    // lateinit will ensure that the variable will be initialized before being used
+    lateinit var diceImage: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -17,6 +21,8 @@ class MainActivity : AppCompatActivity() {
         rollButton.setOnClickListener {
             rollDice()
         }
+
+        diceImage = findViewById(R.id.dice_image)
     }
 
     private fun rollDice() {
@@ -31,8 +37,7 @@ class MainActivity : AppCompatActivity() {
             6 -> R.drawable.dice_6
             else -> R.drawable.empty_dice
         }
-        val diceImage : ImageView = findViewById(R.id.dice_image)
-        diceImage.setImageResource(drawableResource)
+        diceImage?.setImageResource(drawableResource)
 
     }
 }
