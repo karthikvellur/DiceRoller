@@ -13,6 +13,8 @@ class MainActivity : AppCompatActivity() {
     // lateinit will ensure that the variable will be initialized before being used
     lateinit var diceImage: ImageView
 
+    // onCreate should be overriden always
+    // Need to specify which is my layout and also inflate it - setContentView will take care of it
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
